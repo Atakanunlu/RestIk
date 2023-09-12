@@ -45,6 +45,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -107,7 +108,7 @@ fun SignInScreen(){
                             .size(160.dp),
                     colorFilter = ColorFilter.tint(Color.White))
 
-                    Text(text = "Hoşgeldiniz",
+                    Text(text = stringResource(id = R.string.welcome),
                     fontSize = 40.sp,
                     color = Color.White,
                     fontStyle = FontStyle.Italic
@@ -121,10 +122,10 @@ fun SignInScreen(){
                 modifier = Modifier
                     .fillMaxHeight()
                     .fillMaxWidth()
-                    .padding(horizontal = 40.dp,vertical = 80.dp)
+                    .padding(horizontal = 40.dp, vertical = 80.dp)
                     ) {
 
-                Text(text = "Giriş Yapınız",
+                Text(text = stringResource(id = R.string.log_in_title),
                     style = MaterialTheme.typography.headlineLarge
                 )
 
@@ -137,7 +138,7 @@ fun SignInScreen(){
                 keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                 keyboardActions = KeyboardActions(onNext = {focusPassword.requestFocus()}),
                 singleLine = true,
-                label = { Text(text = "Kullanıcı Adı")}
+                label = { Text(text = stringResource(id = R.string.username))}
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
@@ -148,7 +149,7 @@ fun SignInScreen(){
                         .focusRequester(focusPassword),
                     value = password,
                     onValueChange = {password =it},
-                    label = { Text(text = "Şifre")},
+                    label = { Text(text = stringResource(id = R.string.password))},
                     singleLine = true,
 
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password,
@@ -184,14 +185,14 @@ fun SignInScreen(){
                             onCheckedChange = {rememberMe.value = it},
                         colors = CheckboxDefaults.colors(checkedColor = Color.Blue))
 
-                        Text(text = "Beni Hatırla",
+                        Text(text = stringResource(id = R.string.remember_me),
                             fontSize = 14.sp,
                             color = Color.Blue)
 
                     }
 
                     TextButton(onClick = {}) {
-                        Text(text = "Şifremi unuttum",
+                        Text(text = stringResource(id = R.string.forget_password),
                             fontSize = 14.sp,
                             color = Color.Blue)
                         
@@ -206,7 +207,7 @@ fun SignInScreen(){
                 shape = RoundedCornerShape(16.dp),
                 colors = ButtonDefaults.buttonColors(Color.Blue)) {
 
-                    Text(text = "Giriş yap",
+                    Text(text = stringResource(id = R.string.log_in_button),
                     color = Color.White)
 
                     
