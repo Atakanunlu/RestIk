@@ -12,22 +12,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
+import androidx.navigation.NavController
 import com.cousinsco.restik.R
 import com.cousinsco.restik.navigation.AppScreens
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(navController: NavHostController){
+fun SplashScreen(navController: NavController){
 
     LaunchedEffect(key1 = true ){
-        delay(5000)
+        delay(2000)
 
         navController.popBackStack()
-        navController.navigate(AppScreens.MainScreen.route)
+        navController.navigate(AppScreens.LoginScreen.route)
     }
-
-
 
     Splash()
 }
@@ -41,7 +39,7 @@ fun Splash(){
         verticalArrangement = Arrangement.Center
     ) {
         Image(painter = painterResource(id = R.drawable.logoo),
-            contentDescription = "RestIk",
+            contentDescription = "RestIk Logo",
             Modifier.size(300.dp,200.dp))
 
     }
