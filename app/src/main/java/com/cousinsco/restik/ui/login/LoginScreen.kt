@@ -82,7 +82,7 @@ fun LoginScreen(navController: NavController){
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
-fun SignInScreen(navController: NavController) {
+fun LoginScreen(navController: NavController) {
 
 
 
@@ -253,5 +253,5 @@ fun SignInScreen(navController: NavController) {
 @Composable
 fun DefaultPreview() {
 
-    SignInScreen(navController = rememberNavController())
+    LoginScreen(navController = rememberNavController())
 }

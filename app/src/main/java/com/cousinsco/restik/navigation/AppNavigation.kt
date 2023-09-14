@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.cousinsco.restik.ui.login.SignInScreen
+import com.cousinsco.restik.ui.login.LoginScreen
 import com.cousinsco.restik.ui.main.MainScreen
 import com.cousinsco.restik.ui.main.ProfileScreen
 import com.cousinsco.restik.ui.splash.SplashScreen
@@ -22,7 +22,7 @@ fun AppNavigation(){
         }
 
         composable(AppScreens.LoginScreen.route){
-            SignInScreen(navController=navController)
+            LoginScreen(navController=navController)
         }
         composable(AppScreens.MainScreenn.route){
             MainScreen(navController = navController)
