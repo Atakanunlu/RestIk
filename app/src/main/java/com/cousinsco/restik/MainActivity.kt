@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.cousinsco.restik.navigation.AppNavigation
+
 import com.cousinsco.restik.ui.theme.RestIkTheme
 
 class MainActivity : ComponentActivity() {
