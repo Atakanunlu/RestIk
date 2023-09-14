@@ -7,6 +7,24 @@
     <string name="remember_me">Beni Hatırla</string>
     <string name="forget_password">Şifremi unuttum</string>
     <string name="log_in_button">Giriş Yap</string>
+    <string name="personnelinformation">Kullanıcı Bilgileri</string>
+    <string name="backtomenu">İşlem Menüsüne Dön</string>
+    <string name="customermanagement">Müşteri Yönetimi</string>
+    <string name="menumanagement">Menü Yönetimi</string>
+    <string name="stockmanagement">Stok Yönetimi</string>
+    <string name="accounting">Muhasebe</string>
+    <string name="reports">Raporlar</string>
+    <string name="takeorder">Sipariş Al</string>
+    <string name="profile">Profilim</string>
+    <string name="actionmenu">İşlem Menüsü</string>
+    <string name="position">Pozisyon:</string>
+    <string name="position1">Pozisyonunuz</string>
+    <string name="profileusername">Kullanıcı Adı:</string>
+    <string name="profileusername1">Kullanıcı Adınız</string>
+    <string name="personelnumber">Personel Numarası:</string>
+    <string name="personelnumber1">Personel Numaranız</string>
+
+
 
 
 

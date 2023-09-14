@@ -13,13 +13,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.cousinsco.restik.R
 import com.cousinsco.restik.navigation.AppScreens
 import kotlinx.coroutines.delay
 
+
+
 @Composable
 fun SplashScreen(navController: NavController){
-
     LaunchedEffect(key1 = true ){
         delay(2000)
 
@@ -27,11 +29,6 @@ fun SplashScreen(navController: NavController){
         navController.navigate(AppScreens.LoginScreen.route)
     }
 
-    Splash()
-}
-
-@Composable
-fun Splash(){
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -50,6 +47,9 @@ fun Splash(){
 @Preview(showBackground = true)
 @Composable
 fun SplashScreenPreview() {
-    Splash()
+    SplashScreen(navController = rememberNavController())
 
 }
+
+
+
