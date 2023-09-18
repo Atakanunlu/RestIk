@@ -23,6 +23,12 @@
     <string name="profileusername1">Kullanıcı Adınız</string>
     <string name="personelnumber">Personel Numarası:</string>
     <string name="personelnumber1">Personel Numaranız</string>
+    <string name="addemployee">ÇALIŞAN EKLE</string>
+    <string name="addemployee1">Çalışan Ekle</string>
+    <string name="firstname">İsim</string>
+    <string name="lastname">Soy İsim</string>
+    <string name="chooserole">Rol Seçiniz</string>
+    <string name="save">KAYDET</string>
 
 
 
