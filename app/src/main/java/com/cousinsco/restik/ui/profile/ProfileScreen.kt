@@ -60,8 +60,8 @@ fun ProfileScreen(navController: NavController) {
                 title = {
                     Box(modifier = Modifier.fillMaxWidth(),
                         contentAlignment = Alignment.Center){
-                        Text(text = "PROFİL",
-                            fontSize = 40.sp,
+                        Text(text = stringResource(id = R.string.profiletitle),
+                            fontSize = 28.sp,
                             fontFamily = FontFamily.Serif,
                             color = Color.White
                         )

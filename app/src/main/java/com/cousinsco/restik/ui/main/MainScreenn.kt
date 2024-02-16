@@ -78,7 +78,7 @@ fun MainScreen(navController: NavController) {
                     Box(modifier = Modifier.fillMaxWidth(),
                         contentAlignment = Alignment.Center){
                         Text(text = "İşlem Menüsü",
-                            fontSize = 40.sp,
+                            fontSize = 28.sp,
                             fontFamily = FontFamily.Serif,
                             color = Color.White
                         )
@@ -130,7 +130,9 @@ fun MainScreen(navController: NavController) {
                             .padding(bottom = 5.dp)
                     ) {
                         Button(
-                            onClick = {  },
+                            onClick = {
+                                      navController.navigate(AppScreens.TakeOrderScreen.route)
+                            },
                             modifier = Modifier
                                 .weight(1f)
                                 .padding(end = 5.dp),
@@ -205,7 +207,9 @@ fun MainScreen(navController: NavController) {
                             .fillMaxWidth()
                     ) {
                         Button(
-                            onClick = {  },
+                            onClick = {
+                                      navController.navigate(AppScreens.MenuScreen.route)
+                            },
                             modifier = Modifier
                                 .weight(1f)
                                 .padding(end = 5.dp),

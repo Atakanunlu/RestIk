@@ -16,6 +16,7 @@
     <string name="reports">Raporlar</string>
     <string name="takeorder">Sipariş Al</string>
     <string name="profile">Profilim</string>
+    <string name="profiletitle">PROFİL</string>
     <string name="actionmenu">İşlem Menüsü</string>
     <string name="position">Pozisyon:</string>
     <string name="position1">Pozisyonunuz</string>
@@ -28,7 +29,9 @@
     <string name="firstname">İsim</string>
     <string name="lastname">Soy İsim</string>
     <string name="chooserole">Rol Seçiniz</string>
+    <string name="role">Rol</string>
     <string name="save">KAYDET</string>
+    <string name="addcategory">Kategori Ekle</string>
 
 
 

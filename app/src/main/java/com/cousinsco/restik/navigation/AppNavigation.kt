@@ -7,10 +7,13 @@ import androidx.navigation.compose.rememberNavController
 import com.cousinsco.restik.ui.addemployee.AddEmployeeScreen
 import com.cousinsco.restik.ui.login.LoginScreen
 import com.cousinsco.restik.ui.main.MainScreen
+import com.cousinsco.restik.ui.menumanagement.GivePermissionScreen
+import com.cousinsco.restik.ui.menumanagement.menu.MenuScreen
 import com.cousinsco.restik.ui.profile.ProfileScreen
 
 import com.cousinsco.restik.ui.splash.SplashScreen
-
+import com.cousinsco.restik.ui.takeorder.OrderEntryScreen
+import com.cousinsco.restik.ui.takeorder.TakeOrderScreen
 
 
 @Composable
@@ -35,5 +38,18 @@ fun AppNavigation(){
         composable(AppScreens.AddEmpyloyeeScreen.route){
             AddEmployeeScreen(navController = navController)
         }
+        composable(AppScreens.MenuScreen.route){
+            MenuScreen(navController = navController)
+        }
+        composable(AppScreens.TakeOrderScreen.route){
+            TakeOrderScreen(navController = navController)
+        }
+        composable(AppScreens.OrderEntryScreen.route){
+            OrderEntryScreen(navController = navController)
+        }
+        composable(AppScreens.GivePermissionScreen.route){
+            GivePermissionScreen(navController = navController)
+        }
+
     }
 }
