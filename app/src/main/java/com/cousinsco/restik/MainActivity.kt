@@ -10,7 +10,9 @@ import androidx.compose.ui.Modifier
 import com.cousinsco.restik.navigation.AppNavigation
 
 import com.cousinsco.restik.ui.theme.RestIkTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    window.statusBarColor = getColor(R.color.black)
                     AppNavigation()
                 }
             }

@@ -7,3 +7,12 @@ enum class EnumRoles(var roleName : String ) {
     ACCOUNTING("Muhasebe")
 
 }
+fun Array<EnumRoles>.toStringList() : List<String>{
+    val emptyList = mutableListOf<String>()
+    EnumRoles.values().forEach {
+        emptyList.add(it.roleName)
+    }
+
+
+    return emptyList
+}

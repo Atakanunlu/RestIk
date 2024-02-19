@@ -1,31 +1,41 @@
 package com.cousinsco.restik.ui.main
 
-import androidx.compose.foundation.Image
+
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
+
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.layout.ContentScale
+
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
+
+import androidx.compose.ui.text.font.FontFamily
+
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -56,86 +66,62 @@ fun MainScreenn(navController: NavController){
  */
 
 
-
-
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(navController: NavController) {
 
+    Scaffold (
+        topBar = {
+            TopAppBar(
+                title = {
+                    Box(modifier = Modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.Center){
+                        Text(text = "İşlem Menüsü",
+                            fontSize = 28.sp,
+                            fontFamily = FontFamily.Serif,
+                            color = Color.White
+                        )
+                    }
 
-    Column(modifier = Modifier
-        .fillMaxSize()
-    ) {
+                },
+                actions = {
+                    IconButton(onClick = {
+                        navController.navigate(AppScreens.ProfileScreen.route)
+                    }) {
+                        Icon(imageVector = Icons.Default.Person,
+                            contentDescription = "Person Icon",
+                            tint = Color.White,
+                            modifier = Modifier.size(90.dp)
+                        )
+                    }
 
-        Box(modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(0.30f),
-            Alignment.TopEnd) {
-            Image(painter = painterResource(id = R.drawable.shape),
-                contentDescription = "bacround",
-                contentScale = ContentScale.FillBounds,
-                modifier = Modifier.fillMaxSize()
-            )
+                },
 
-            Column(modifier = Modifier
-                .fillMaxSize()
-                .padding(20.dp, 50.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Image(painter = painterResource(id = R.drawable.logooo),
-                    contentDescription = "Logo",
-                    Modifier
-                        .weight(1f)
-                        .size(150.dp),
-                    colorFilter = ColorFilter.tint(Color.White)
+                colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    containerColor = Color.Blue
                 )
-                Text(text = stringResource(id = R.string.actionmenu),
-                    fontSize = 40.sp,
-                    color = Color.White,
-                    fontStyle = FontStyle.Italic)
-
-            }
-
+            )
         }
-
-
-
-
+    ) {
         Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 100.dp),
+            .fillMaxSize()
+            ,
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center) {
+            verticalArrangement = Arrangement.Center){
 
-            Button(onClick = {
-                navController.navigate(AppScreens.ProfileScreen.route)
-
-
-            },
-                shape = CutCornerShape(10.dp)
-
-                ,colors = ButtonDefaults.buttonColors(containerColor = Color.Blue)) {
-                Icon(painter = painterResource(id = R.drawable.profilicon),
-                    contentDescription ="Profil Icon",
-                    modifier = Modifier
-                        .size(40.dp)
-                        .padding(5.dp))
-                Text(text = stringResource(id = R.string.profile))
-
-            }
-
-            Spacer(modifier = Modifier.height(50.dp))
+            Spacer(modifier = Modifier.height(70.dp))
 
             Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(8.dp)
             ) {
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(modifier = Modifier.height(100.dp))
 
                 Column(
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .fillMaxSize()
                         .padding(bottom = 5.dp)
                 ) {
                     Row(
@@ -144,7 +130,9 @@ fun MainScreen(navController: NavController) {
                             .padding(bottom = 5.dp)
                     ) {
                         Button(
-                            onClick = {  },
+                            onClick = {
+                                      navController.navigate(AppScreens.TakeOrderScreen.route)
+                            },
                             modifier = Modifier
                                 .weight(1f)
                                 .padding(end = 5.dp),
@@ -202,7 +190,7 @@ fun MainScreen(navController: NavController) {
                             onClick = {  },
                             modifier = Modifier
                                 .weight(1f),
-                            shape = CutCornerShape(5.dp),
+                            shape = CutCornerShape(10.dp),
                             colors = ButtonDefaults.buttonColors(Color.Blue)
                         ) {
                             Icon(painter = painterResource(id = R.drawable.stok),
@@ -219,7 +207,9 @@ fun MainScreen(navController: NavController) {
                             .fillMaxWidth()
                     ) {
                         Button(
-                            onClick = {  },
+                            onClick = {
+                                      navController.navigate(AppScreens.MenuScreen.route)
+                            },
                             modifier = Modifier
                                 .weight(1f)
                                 .padding(end = 5.dp),
@@ -250,27 +240,49 @@ fun MainScreen(navController: NavController) {
 
                         }
                     }
+                    Spacer(modifier = Modifier.height(40.dp))
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Button(
+                            onClick = {
+                                navController.navigate(AppScreens.AddEmpyloyeeScreen.route)
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(end = 5.dp),
+                            shape = CutCornerShape(10.dp),
+                            colors = ButtonDefaults.buttonColors(Color.Blue)
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.adddd),
+                                contentDescription = "Çalışan Ekle Icon",
+                                modifier = Modifier
+                                    .size(50.dp)
+                                    .padding(5.dp)
+                            )
+                            Text(text = stringResource(id = R.string.addemployee1),
+                                fontSize = 30.sp)
+                        }
+
+                        Spacer(modifier = Modifier.height(50.dp))
+                    }
                 }
             }
-
-
         }
+
 
     }
 
 }
 
-
-
-
-
 @Preview(showBackground = true)
 @Composable
 fun MainScreenPreview() {
     MainScreen(navController = rememberNavController())
-    
 
 }
 
- 
+
 

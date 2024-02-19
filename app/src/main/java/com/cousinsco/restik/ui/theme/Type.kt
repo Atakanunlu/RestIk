@@ -32,3 +32,5 @@ val Typography = Typography(
     )
     */
 )
+val ALPHA_DISABLED = 0.5f
+val ALPHA_FULL = 1.0f
