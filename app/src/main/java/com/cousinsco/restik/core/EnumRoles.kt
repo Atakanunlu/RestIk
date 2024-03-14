@@ -13,6 +13,5 @@ fun Array<EnumRoles>.toStringList() : List<String>{
         emptyList.add(it.roleName)
     }
 
-
     return emptyList
 }

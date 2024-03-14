@@ -7,14 +7,14 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.cousinsco.restik.core.database.entity.CategoryEntity
-import kotlinx.coroutines.flow.Flow
+
 
 @Dao
 interface CategoryDao {
 
     @Query("SELECT * FROM category_table")
-    fun getAllCategories(): Flow<List<CategoryEntity>>
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun getAllCategories(): List<CategoryEntity>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(category: CategoryEntity)
     @Update
     fun update(category: CategoryEntity)
@@ -22,8 +22,6 @@ interface CategoryDao {
     @Delete
     fun delete(category: CategoryEntity)
 
-    @Delete
-    fun deleteAll(category: CategoryEntity)
 
 
 
